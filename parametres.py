@@ -17,7 +17,8 @@ while n != "carre" and n != "rectangle":
 n = carre_rectangle(n)
 print(n)
 
-p = int(input("densité de cellule contaminé initialement (%): "))
+v = int(input("densité de cellule vivante initialement (%): "))
+p = int(input("densité de cellule vivante initialement (%): "))
 R = int(input("nombre d'individue contaminé par chaque malade: "))
 t_maladie = int(input("durée de la maladie (jours): "))
 taux_mortalite = float(input("probabilité de mourir de la maladie (%): "))
