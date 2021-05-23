@@ -11,7 +11,6 @@ def carre_rectangle (n):
     return(n)
 
 n = input("entrer 'carre' ou 'rectangle' en fonction de la forme de grille désirée: ")
-
 while n != "carre" and n != "rectangle":
     n = input("entrer 'carre' ou 'rectangle' en fonction de la forme de grille désirée: ")
 
@@ -21,5 +20,5 @@ print(n)
 dense_C = int(input("densité de cellule contaminé initialement (%): "))
 R = int(input("nombre d'individue contaminé par chaque malade: "))
 t_maladie = int(input("durée de la maladie (jours): "))
-taux_mortalite = float(input("probabilité de mourir de la maladie: "))
+taux_mortalite = float(input("probabilité de mourir de la maladie (entre 0 et 1): "))
 
