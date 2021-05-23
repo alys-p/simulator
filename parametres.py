@@ -20,5 +20,5 @@ print(n)
 dense_C = int(input("densité de cellule contaminé initialement (%): "))
 R = int(input("nombre d'individue contaminé par chaque malade: "))
 t_maladie = int(input("durée de la maladie (jours): "))
-taux_mortalite = float(input("probabilité de mourir de la maladie (entre 0 et 1): "))
+taux_mortalite = float(input("probabilité de mourir de la maladie (%): "))
 
