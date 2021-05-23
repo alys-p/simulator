@@ -5,9 +5,9 @@ import pprint
 
 # CREATION DE LA GRILLE DE BASE
 
-def configuration_initial (p, n):
+def configuration_initial (v, n):
     G = []
-    print(p)
+    print(v)
     for i in range(0, n[0]):
         for j in range(0, n[1]):
             dico_cell = {}
@@ -17,12 +17,12 @@ def configuration_initial (p, n):
             print(C)
             G.append(C)
     m = 0
-    while m <= ((n[0]*n[1]*(p/100))-1):
+    while m <= ((n[0]*n[1]*(v/100))-1):
         valeur_random = random.randint(0, n[0]*n[1]-1)
         if G[valeur_random][1]["etat"] == "morte":
             G[valeur_random][1]["etat"] = "vivante"
             m = m +1
     return G
 
-pprint.pprint(configuration_initial(p, n))
+pprint.pprint(configuration_initial(v, n))
 
