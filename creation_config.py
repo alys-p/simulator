@@ -1,4 +1,5 @@
 # IMPORT
+
 from parametres import *
 import random
 import pprint
@@ -17,11 +18,20 @@ def configuration_initial (v, n):
             print(C)
             G.append(C)
     m = 0
+    L = []
     while m <= ((n[0]*n[1]*(v/100))-1):
         valeur_random = random.randint(0, n[0]*n[1]-1)
         if G[valeur_random][1]["etat"] == "morte":
             G[valeur_random][1]["etat"] = "vivante"
+            L.append(valeur_random)
             m = m +1
+    print(L)
+    o = 0
+    while o <= ((m*(p/100))-1):
+        print(o)
+        valeur_random_2 = random.choice(L)
+        G[valeur_random_2][1]["etat"] = "contaminee"
+        o = o +1
     return G
 
 pprint.pprint(configuration_initial(v, n))
