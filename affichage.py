@@ -8,10 +8,14 @@ def creation_grille(n):
     for j in range(n[1]):
         for i in range(n[2]):
             L = []
-            L.append(i)
+            L.append("")
         ind = []
         ind.append(L)
     return(ind)
+
+def definir_status():
+
+
 
 
 
