@@ -26,7 +26,8 @@ def definir_status(G):
     return y
 
 
-def afficher_grille(y):
+def afficher_grille(G):
+    y = definir_status(G)
     for i in range(len(y)):
         for j in range(len(y[i])):
             print(y[i][j][1], end='')
