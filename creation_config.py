@@ -15,14 +15,12 @@ def configuration_initial (v, n, p):
     """
 
     G = []  # création de la grille et remplissage progressif
-    print(v)
     for i in range(0, n[0]):
         for j in range(0, n[1]):
             dico_cell = {}
             C = [(i, j), dico_cell]
             dico_cell["etat"] = "morte"
             dico_cell["valeur"] = 2
-            print(C)
             G.append(C)
     m = 0       # variable d'incrémentation parceque c'est un while donc pas il y a pas d'incrémentation de 1 automatique
     L = []
@@ -32,10 +30,8 @@ def configuration_initial (v, n, p):
             G[valeur_random][1]["etat"] = "vivante"     # de vivante and pa un cellule attribué vivante 2 fois ou plus
             L.append(valeur_random)
             m = m +1
-    print(L)
     o = 0       # variable d'incrémentation parceque c'est un while donc pas il y a pas d'incrémentation de 1 automatique
     while o <= ((m*(p/100))-1):
-        print(o)
         valeur_random_2 = random.choice(L)
         G[valeur_random_2][1]["etat"] = "contaminee"
         o = o +1
