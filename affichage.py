@@ -1,10 +1,10 @@
-def definir_couleur(status):
+def definir_couleur(etat):
     code = {'morte': 1, 'vivante': 2, 'immune': 4, 'contaminee': 5}
-    couleur_stat = 30 + code[status]
+    couleur_stat = 30 + code[etat]
     return ("\033[{}m\033[{}m{}\033[0m".format(couleur_stat, couleur_stat, " "))
 
 
-def definir_status(G):
+def definir_etat(G):
     y = []
     for i in range(len(G)):
         x = []
@@ -27,7 +27,7 @@ def definir_status(G):
 
 
 def afficher_grille(G):
-    y = definir_status(G)
+    y = definir_etat(G)
     for i in range(len(y)):
         for j in range(len(y[i])):
             print(y[i][j][1], end='')
