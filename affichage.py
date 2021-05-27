@@ -33,5 +33,3 @@ def afficher_grille(G):
             print(y[i][j][1], end='')
         print()
 
-def afficher_configuration():
-    afficher_grille
