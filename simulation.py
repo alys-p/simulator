@@ -1,5 +1,5 @@
 import affichage
-import creation_config
+from creation_config import *
 from parametres import *
-G = creation_config.configuration_initial(v, n, p)
+G = configuration_initial(v, n, p)
 affichage.afficher_grille(G)

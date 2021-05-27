@@ -37,5 +37,5 @@ def configuration_initial (v, n, p):
         o = o +1
     return G
 
-pprint.pprint(configuration_initial(v, n, p))
+
 
