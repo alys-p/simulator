@@ -21,3 +21,4 @@ def transition (G):
         #if nb_contaminee != 0
 
 transition(configuration_initial (v, n, p))
+
