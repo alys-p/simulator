@@ -5,29 +5,27 @@ def definir_couleur(etat):
 
 
 def definir_etat(G):
-    y = []
-    for i in range(G[-1][0][0]):
-        x = []
-        for j in range(len(G)//G[-1][0][0]):
-            if G[j + i][1]['etat'] == "decedee":
-                c = [(i, j), definir_couleur('decedee')]
-                x.append(c)
-            elif G[j + i][1]['etat'] == "saine":
-                c = [(i, j), definir_couleur('saine')]
-                x.append(c)
-            elif G[j + i][1]['etat'] == "immunisee":
-                c = [(i, j), definir_couleur('immunisee')]
-                x.append(c)
-            else:
-                c = [(i, j), definir_couleur('contaminee')]
-                x.append(c)
-        y.append(x)
-    return y
+    couleur = []
+
+    for i in range(len(G)):
+        if G[i][1]['etat'] == 'decedee':
+            G[i][1]['couleur'] = definir_couleur('decedee')
+        elif G[i][1]['etat'] == 'saine':
+            G[i][1]['couleur'] = definir_couleur('saine')
+        elif G[i][1]['etat'] == 'contaminee':
+            G[i][1]['couleur'] = definir_couleur('contaminee')
+        else:
+            G[1]['couleur'] = definir_couleur('immunisee')
+    return G
 
 
 def afficher_grille(G):
-    y = definir_etat(G)
-    for i in range(len(y)):
-        for j in range(len(y[i])):
-            print(y[i][j][1], end='')
-        print()
+    G = definir_etat(G)
+    for i in range (len(G)):
+        print(G[i])
+    for i in range(len(G)):
+        if G[i][0][1] == 0:
+            print()
+            print(G[i][1]['couleur'], end='')
+        else:
+            print(G[i][1]['couleur'], end='')
