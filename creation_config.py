@@ -27,7 +27,7 @@ def configuration_initial (v, n, p):
     while m <= ((n[0]*n[1]*(v/100))-1):
         valeur_random = random.randint(0, n[0]*n[1]-1)
         if G[valeur_random][1]["etat"] == "morte":      # verification que la cellue est bien morte pour en avoir le bon nombre
-            G[valeur_random][1]["etat"] = "vivante"     # de vivante and pa un cellule attribué vivante 2 fois ou plus
+            G[valeur_random][1]["etat"] = "saine"     # de vivante and pa un cellule attribué vivante 2 fois ou plus
             L.append(valeur_random)
             m = m +1
     o = 0       # variable d'incrémentation parceque c'est un while donc pas il y a pas d'incrémentation de 1 automatique
