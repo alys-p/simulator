@@ -1,23 +1,22 @@
 def definir_couleur(etat):
-    code = {'morte': 0, 'vivante': 7, 'immune': 2, 'contaminee': 1}
+    code = {'decedee': 0, 'saine': 7, 'immunisee': 2, 'contaminee': 1}
     couleur_stat = 30 + code[etat]
-    return ("\033[{}m\033[{}m{}\033[0m".format(couleur_stat, couleur_stat+10, " "))
+    return "\033[{}m\033[{}m{}\033[0m".format(couleur_stat, couleur_stat + 10, " ")
 
 
 def definir_etat(G):
     y = []
-    for i in range(len(G)):
+    for i in range(G[-1][0][0]):
         x = []
-        for j in range(len(G[i])):
-
-            if G[i][j][1]["etat"] == "morte":
-                c = [(i, j), definir_couleur('morte')]
+        for j in range(len(G)//G[-1][0][0]):
+            if G[j + i][2]['etat'] == "decedee":
+                c = [(i, j), definir_couleur('decedee')]
                 x.append(c)
-            elif G[i][j][1]["etat"] == "vivante":
-                c = [(i, j), definir_couleur('vivante')]
+            elif G[j + i][2]['etat'] == "saine":
+                c = [(i, j), definir_couleur('saine')]
                 x.append(c)
-            elif G[i][j][1]["etat"] == "immune":
-                c = [(i, j), definir_couleur('immune')]
+            elif G[j + i][2]['etat'] == "immunisee":
+                c = [(i, j), definir_couleur('immunisee')]
                 x.append(c)
             else:
                 c = [(i, j), definir_couleur('contaminee')]
@@ -32,4 +31,3 @@ def afficher_grille(G):
         for j in range(len(y[i])):
             print(y[i][j][1], end='')
         print()
-
