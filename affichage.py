@@ -9,13 +9,13 @@ def definir_etat(G):
     for i in range(G[-1][0][0]):
         x = []
         for j in range(len(G)//G[-1][0][0]):
-            if G[j + i][2]['etat'] == "decedee":
+            if G[j + i][1]['etat'] == "decedee":
                 c = [(i, j), definir_couleur('decedee')]
                 x.append(c)
-            elif G[j + i][2]['etat'] == "saine":
+            elif G[j + i][1]['etat'] == "saine":
                 c = [(i, j), definir_couleur('saine')]
                 x.append(c)
-            elif G[j + i][2]['etat'] == "immunisee":
+            elif G[j + i][1]['etat'] == "immunisee":
                 c = [(i, j), definir_couleur('immunisee')]
                 x.append(c)
             else:
