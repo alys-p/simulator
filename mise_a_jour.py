@@ -8,18 +8,14 @@ def transition (G):
     nb_immunisee = 0
     nb_saine = 0
     for i in range(len(G)):
-        for x in range(G[i][0][0] -1, G[i][0][0] +2):
-            for y in range(G[i][0][1] -1, G[i][0][1] +2):
-                if x <= n[0] or x >= 0 or y <= n[1] or y >= 0:
-                    if G[i][1]["etat"] == "immunisee":
-                        nb_immunisee = nb_immunisee +1
-                    if G[i][1]["etat"] == "contaminee":
-                        nb_contaminee = nb_contaminee +1
-                    if G[i][1]["etat"] == "saine":
-                        nb_saine = nb_saine +1
-                    print(nb_saine, nb_contaminee, nb_immunisee)
-            print()
-            print(x,y)
+        if G[i][1]["etat"] == "saine":
+            for k in range(G[i][0][0] -1, G[i][0][0] +2):
+                for l in range(G[i][0][1] -1, G[i][0][1] +2):
+                    for m in range(len(G)):
+                        if G[m][0] == (k, l):
+                            if G[m][1]["etat"] == "contaminee":
+                                nb_contaminee = nb_contaminee +1
+                                print("nb", nb_contaminee)
         nb_contaminee = 0
 
         #if nb_contaminee != 0
