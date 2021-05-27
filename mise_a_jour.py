@@ -1,5 +1,4 @@
 # IMPORTS
-import pprint
 
 from parametres import *
 from creation_config import *
@@ -24,6 +23,10 @@ def transition (G, C):
     if G[C][1]["etat"] == "contaminee":
         G[C][1]["valeur"] = G[C][1]["valeur"] +1
         print("cellule contaminee: ", G[C][0])
+
+        #if nb_contaminee != 0
+
+transition(configuration_initial (v, n, p))
 
 
 parcours_cell(configuration_initial (v, n, p))
