@@ -1,7 +1,7 @@
 def definir_couleur(etat):
-    code = {'morte': 1, 'vivante': 2, 'immune': 4, 'contaminee': 5}
+    code = {'morte': 0, 'vivante': 7, 'immune': 2, 'contaminee': 1}
     couleur_stat = 30 + code[etat]
-    return ("\033[{}m\033[{}m{}\033[0m".format(couleur_stat, couleur_stat, " "))
+    return ("\033[{}m\033[{}m{}\033[0m".format(couleur_stat, couleur_stat+10, " "))
 
 
 def definir_etat(G):
@@ -32,3 +32,6 @@ def afficher_grille(G):
         for j in range(len(y[i])):
             print(y[i][j][1], end='')
         print()
+
+def afficher_configuration():
+    afficher_grille
