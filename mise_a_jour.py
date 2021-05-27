@@ -26,7 +26,3 @@ def transition (G, C):
 
         #if nb_contaminee != 0
 
-transition(configuration_initial (v, n, p))
-
-
-parcours_cell(configuration_initial (v, n, p))
