@@ -20,7 +20,7 @@ def configuration_initial (v, n, p):
             dico_cell = {}
             C = [(i, j), dico_cell]
             dico_cell["etat"] = "morte"
-            dico_cell["valeur"] = 2
+            dico_cell["valeur"] = 0
             G.append(C)
     m = 0       # variable d'incrémentation parceque c'est un while donc pas il y a pas d'incrémentation de 1 automatique
     L = []
