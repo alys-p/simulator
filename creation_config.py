@@ -19,14 +19,14 @@ def configuration_initial (v, n, p):
         for j in range(0, n[1]):
             dico_cell = {}
             C = [(i, j), dico_cell]
-            dico_cell["etat"] = "morte"
+            dico_cell["etat"] = "decedee"
             dico_cell["valeur"] = 0
             G.append(C)
     m = 0       # variable d'incrémentation parceque c'est un while donc pas il y a pas d'incrémentation de 1 automatique
     L = []
     while m <= ((n[0]*n[1]*(v/100))-1):
         valeur_random = random.randint(0, n[0]*n[1]-1)
-        if G[valeur_random][1]["etat"] == "morte":      # verification que la cellue est bien morte pour en avoir le bon nombre
+        if G[valeur_random][1]["etat"] == "decedee":      # verification que la cellue est bien morte pour en avoir le bon nombre
             G[valeur_random][1]["etat"] = "saine"     # de vivante and pa un cellule attribué vivante 2 fois ou plus
             L.append(valeur_random)
             m = m +1
