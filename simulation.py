@@ -5,7 +5,7 @@ from mise_a_jour import *
 
 G = configuration_initial(v, n, p)
 
-for i in range(t_maladie + 1):
+for i in range(nb_tours):
     print()
     affichage.afficher_grille(G)
     print()
