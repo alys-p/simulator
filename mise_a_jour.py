@@ -12,8 +12,6 @@ def parcours_cell(G):
 
 def transition(G, C):
     nb_contaminee = 0
-    nb_immunisee = 0
-    nb_saine = 0
 
     if G[C][1]["etat"] == "saine":
         for k in range(G[C][0][0] - 1, G[C][0][0] + 2):
@@ -23,17 +21,26 @@ def transition(G, C):
                         if G[m][1]["etat"] == "contaminee":
                             nb_contaminee = nb_contaminee + 1
 
-        if nb_contaminee > R-1:
+        if nb_contaminee > R - 1:
             G[C][1]["etat"] = "contaminee"
 
-    if G[C][1]["valeur"] == t_maladie -1:
-        if G[C][1]["etat"] == "contaminee":
+
+    if G[C][1]["etat"] == "contaminee":
+        if G[C][1]["valeur"] == t_maladie - 1:
             valeur_random = random.randint(0, 100)
             if valeur_random >= taux_mortalite:
                 G[C][1]["etat"] = "immunisee"
+                G[C][1]["valeur"] = 0
             else:
                 G[C][1]["etat"] = "decedee"
                 G[C][1]["valeur"] = 0
+        else:
+            G[C][1]["valeur"] = G[C][1]["valeur"] + 1
 
-    if G[C][1]["etat"] == "contaminee":
-        G[C][1]["valeur"] = G[C][1]["valeur"] + 1
+
+    if G[C][1]["etat"] == "immunisee":
+        if G[C][1]["valeur"] == t_immunitee -1:
+            G[C][1]["etat"] = "saine"
+            G[C][1]["valeur"] = 0
+        else:
+            G[C][1]["valeur"] = G[C][1]["valeur"] + 1
