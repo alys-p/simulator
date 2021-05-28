@@ -27,3 +27,5 @@ def simulation():
     print("decedées:", S['decedees'], "  contaminées:", S['contaminees'],
           "  guerries:", S['gueries'], "  malades en ce moment:", S['malades'])
     sleep(1)  # j'utilise sleep pour que l'affichage se fasse en decalé
+
+simulation()
