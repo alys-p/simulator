@@ -48,7 +48,7 @@ def afficher_grille(G):  # cette fonction permet d'afficher la grille de cellule
             # la cellule
 
 
-def statistiques(G, S, Q):
+def statistiques(G, S):
     S['malades'] = 0
     S['decedees'] = 0
     for i in range(len(G)):
