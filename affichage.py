@@ -49,8 +49,10 @@ def afficher_grille(G):  # cette fonction permet d'afficher la grille de cellule
 
 
 def statistiques(G, S):
-    S['malades'] = 0
+    S['gueries'] = 0
     S['decedees'] = 0
+    S['contaminees'] = 0
+
     for i in range(len(G)):
 
         if G[i][1]['etat'] == 'decedee':
