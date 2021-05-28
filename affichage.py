@@ -15,7 +15,7 @@ def definir_etat(G):
         elif G[i][1]['etat'] == 'contaminee':
             G[i][1]['couleur'] = definir_couleur('contaminee')
         else:
-            G[1]['couleur'] = definir_couleur('immunisee')
+            G[i][1]['couleur'] = definir_couleur('immunisee')
     return G
 
 
