@@ -2,11 +2,12 @@
 
 from parametres import *
 import random
-import pprint # juste pour un print plus jolie et repérer facilement les erreurs potentielles
+import pprint  # juste pour un print plus jolie et repérer facilement les erreurs potentielles
+
 
 # CREATION DE LA GRILLE DE BASE
 
-def configuration_initial (v, n, p):
+def configuration_initial(v, n, p):
     """
     :param n: dimension de la grille (tuple) pour determiner l'espace et donc le nombre de cellules vivante possible.
     :param v: pourcentage de cellules vivante par rapport au maximum d'espace (n[0]*n[1])
@@ -17,25 +18,26 @@ def configuration_initial (v, n, p):
     G = []  # création de la grille et remplissage progressif
     for i in range(0, n[0]):
         for j in range(0, n[1]):
-            dico_cell = {}
+            dico_cell = {}  # création des dictionnaire spécifique a chaque cellule
             C = [(i, j), dico_cell]
-            dico_cell["etat"] = "decedee"
+            dico_cell["etat"] = "decedee"  # toutes cellules sont concidéré morte just pour appliquer le
+            # pourcentage de vivantes après.
             dico_cell["valeur"] = 0
             G.append(C)
-    m = 0       # variable d'incrémentation parceque c'est un while donc pas il y a pas d'incrémentation de 1 automatique
+    m = 0  # variable d'incrémentation parceque c'est un while donc pas il y a pas d'incrémentation de 1
+    # automatique
     L = []
-    while m <= ((n[0]*n[1]*(v/100))-1):
-        valeur_random = random.randint(0, n[0]*n[1]-1)
-        if G[valeur_random][1]["etat"] == "decedee":      # verification que la cellue est bien morte pour en avoir le bon nombre
-            G[valeur_random][1]["etat"] = "saine"     # de vivante and pa un cellule attribué vivante 2 fois ou plus
+    while m <= ((n[0] * n[1] * (v / 100)) - 1):
+        valeur_random = random.randint(0, n[0] * n[1] - 1)
+        if G[valeur_random][1]["etat"] == "decedee":  # verification que la cellue est bien morte pour en avoir
+            # le bon nombre
+            G[valeur_random][1]["etat"] = "saine"  # de vivante and pa un cellule attribué vivante 2 fois ou plus
             L.append(valeur_random)
-            m = m +1
-    o = 0       # variable d'incrémentation parceque c'est un while donc pas il y a pas d'incrémentation de 1 automatique
-    while o <= ((m*(p/100))-1):
+            m = m + 1
+    o = 0  # variable d'incrémentation parceque c'est un while donc pas il y a pas d'incrémentation de 1
+    # automatique
+    while o <= ((m * (p / 100)) - 1):
         valeur_random_2 = random.choice(L)
         G[valeur_random_2][1]["etat"] = "contaminee"
-        o = o +1
+        o = o + 1
     return G
-
-
-
