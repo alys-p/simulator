@@ -14,7 +14,7 @@ def simulation():
         print()
         print("cellules:")
         print("decedées:", S['decedees'], "  contaminées:", S['contaminees'],
-            "  guerries:", S['gueries'], "  malades en ce moment:", S['malades'])
+            "  gueries:", S['gueries'],)
         sleep(1)  # j'utilise sleep pour que l'affichage se fasse en decalé
         print()
         print()
@@ -25,7 +25,7 @@ def simulation():
     print()
     print("cellules:")
     print("decedées:", S['decedees'], "  contaminées:", S['contaminees'],
-          "  guerries:", S['gueries'], "  malades en ce moment:", S['malades'])
+          "  guerries:", S['gueries'])
     sleep(1)  # j'utilise sleep pour que l'affichage se fasse en decalé
 
 simulation()
