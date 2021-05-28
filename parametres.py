@@ -18,5 +18,6 @@ p = int(input("densité de cellule comtaminées initialement (%): "))     # mêm
 R = int(input("nombre d'individue contaminé par chaque malade: "))      # nombre d'individue contaminées dans le vosinage de la cellule
                                                                         # soit en général dans un visinage de 8
 t_maladie = int(input("durée de la maladie (jours): "))
+t_immunitee = int(input("durée de l'immunitée (jours): "))
 taux_mortalite = float(input("probabilité de mourir de la maladie (%): "))
 
