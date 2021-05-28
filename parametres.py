@@ -6,6 +6,8 @@ n = (longueur, largeur)     # tuple des dimensions de la grille
 
 print(n)
 
+nb_tours = int(input("Entrer la durée de la simulation (jours): "))
+
 v = int(input("densité de cellule vivante initialement (%): "))     # on concidère qu'une cellule fait 1 par 1 et donc il y a dans une
                                                                     # cellule un maximum de n[0]*n[1] cellule. Ici on demenade juste
                                                                     # le pourcentage du maximum de cellule possible est vivante.
