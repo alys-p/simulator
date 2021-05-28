@@ -1,5 +1,3 @@
-from os import system, name
-from time import sleep
 
 
 def definir_couleur(etat):  # cette fonction permet de definir la couleur d'une case en fonction de l'état de la cellule
@@ -49,11 +47,17 @@ def afficher_grille(G):  # cette fonction permet d'afficher la grille de cellule
             print(G[i][1]['couleur'], ' ', end='')  # si on ne change pas de ligne, alors on imprime simplement
             # la cellule
 
-    sleep(1)  # j'utilise sleep pour que l'affichage se fasse en decalé
 
-    # après avoir afficher la grille, on efface la console pour afficher la grille suivante
+def statistiques(G, S, Q):
+    S['malades'] = 0
+    S['decedees'] = 0
+    for i in range(len(G)):
 
-    if name == 'nt':  # cette condition en fonction de l'ordinateur utilisé nous permet d'utilser la fonction necessaire
-        _ = system('cls')  # cette instruction efface ce qui a été imprimé précèdamment
-    else:
-        _ = system('clear')
+        if G[i][1]['etat'] == 'decedee':
+            S['decedees'] = S['decedees'] + 1
+
+        elif G[i][1]['etat'] == 'contaminee':
+            S['contaminees'] = S['contaminees'] + 1
+
+        elif G[i][1]['etat'] == 'immunisee':
+            S['gueries'] = S['gueries'] + 1
