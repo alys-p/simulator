@@ -21,8 +21,8 @@ def definir_etat(G):
 
 def afficher_grille(G):
     G = definir_etat(G)
-    for i in range (len(G)):
-        print(G[i])
+    #for i in range (len(G)):
+        #print(G[i])
     for i in range(len(G)):
         if G[i][0][1] == 0:
             print()
