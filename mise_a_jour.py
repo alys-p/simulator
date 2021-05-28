@@ -29,7 +29,7 @@ def transition(G, C):
     if G[C][1]["valeur"] == t_maladie -1:
         if G[C][1]["etat"] == "contaminee":
             valeur_random = random.randint(0, 100)
-            if valeur_random > taux_mortalite:
+            if valeur_random >= taux_mortalite:
                 G[C][1]["etat"] = "immunisee"
             else:
                 G[C][1]["etat"] = "decedee"
