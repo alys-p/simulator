@@ -15,9 +15,8 @@ v = int(input("densité de cellule vivante initialement (%): "))     # on concid
 p = int(input("densité de cellule comtaminées initialement (%): "))     # même idée qu'au dessus mais ici il s'agit du pourcentatage des
                                                                     # cellules vivante qui sont contaminé à l'origine.
 
-R = int(input("nombre d'individue contaminé par chaque malade: "))      # nombre d'individue contaminées dans le vosinage de la cellule
-                                                                        # soit en général dans un visinage de 8
 t_maladie = int(input("durée de la maladie (jours): "))
 t_immunitee = int(input("durée de l'immunitée (jours): "))
-taux_mortalite = float(input("probabilité de mourir de la maladie (%): "))
+taux_mortalite = int(input("probabilité de mourir de la maladie (%): "))
+R = int(input("probabilité qu'une cellule entouré d'une cellule contaminée soit contaminée: "))
 
